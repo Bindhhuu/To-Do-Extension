@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h3>📝 To-Do List</h3>
+
+  <label class="switch">
+    <input type="checkbox" id="themeToggle">
+    <span class="slider round"></span>
+  </label>
+
+  <input type="text" id="taskInput" placeholder="Add a task">
+  <input type="datetime-local" id="deadlineInput">
+  <button id="addBtn">Add</button>
+
+  <ul id="taskList"></ul>
+
+  <audio id="completeSound" src="complete.mp3" preload="auto"></audio>
+
+  <script src="popup.js"></script>
+</body>
+</html>

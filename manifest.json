@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "Simple To-Do List",
+    "version": "1.0",
+    "description": "Keep track of your tasks easily",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "permissions": ["storage"]
+  }
+  
