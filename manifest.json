@@ -7,6 +7,14 @@
       "default_popup": "popup.html",
       "default_icon": "icon.png"
     },
-    "permissions": ["storage"]
+    "permissions": ["storage"],
+    "web_accessible_resources": [
+  {
+    "resources": ["complete.mp3"],
+    "matches": ["<all_urls>"]
+  }
+]
+
+    
   }
   
