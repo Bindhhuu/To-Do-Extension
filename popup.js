@@ -4,8 +4,8 @@ const taskList = document.getElementById("taskList");
 const deadlineInput = document.getElementById("deadlineInput");
 const themeToggle = document.getElementById("themeToggle");
 const completeSound = document.getElementById("completeSound");
+const dingSound = new Audio("complete.mp3");
 
-// Load tasks and theme
 document.addEventListener("DOMContentLoaded", () => {
   loadTasks();
   loadTheme();
@@ -42,16 +42,20 @@ function addTask(text, deadline = "", completed = false) {
   const delBtn = document.createElement("button");
   delBtn.innerHTML = "&times;";
 
-  delBtn.addEventListener("click", () => {
+  delBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
     li.remove();
     deleteTask(text);
   });
 
   li.addEventListener("click", () => {
-    li.classList.toggle("done");
-    li.classList.add("animate");
-    completeSound.play();
-    updateTaskStatus(text);
+    li.classList.add("done", "animate");
+    dingSound.play();
+    
+    setTimeout(() => {
+      li.remove();
+      deleteTask(text);
+    }, 500);
   });
 
   li.appendChild(taskText);
